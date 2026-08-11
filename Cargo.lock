@@ -252,8 +252,10 @@ dependencies = [
  "antithesis_sdk",
  "axum 0.6.20",
  "clap",
+ "memmap2",
  "reqwest 0.11.26",
  "serde_json",
+ "tempfile",
  "tokio",
  "vector-buffers",
 ]
