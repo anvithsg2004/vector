@@ -1967,6 +1967,9 @@ where
                 Err(old_record) => {
                     record = old_record;
                     if self.wait_for_reader().await {
+                        record
+                            .take_finalizer_groups()
+                            .update_status(EventStatus::Errored);
                         return Err(WriterError::Shutdown);
                     }
                 }
